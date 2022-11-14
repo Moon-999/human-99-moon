@@ -25,7 +25,7 @@ def db_create():
             species VARCHAR(100) NOT NULL
         );"""
     )
-    data = pd.read_csv('data/apt.csv')
+    data = pd.read_csv('data/iris.csv')
     print(data)
     data.to_sql(name='iris', con=engine, schema = 'public', if_exists='replace', index=False)
 
