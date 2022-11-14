@@ -177,6 +177,46 @@ def querySQL():
     }
     return responseBody
 
+## Query 조회2
+@app.route('/api/querySQL2', methods=['POST'])
+def querySQL():
+    
+    body = request.get_json()
+    params_df = body['action']['params']
+    location01 = json.loads(params_df['sys_location01'])
+    location02 = json.loads(params_df['sys_location02'])
+    location03 = json.loads(params_df['sys_location03'])
+    
+
+    print(location01, type(location01))
+    print(location02, type(location02))
+    print(location03, type(location03))
+    query_str = f'''
+        SELECT DISTINCT name FROM apt2 where city = {location01} and gu = {location02} and dong = {location03}
+    '''
+
+    engine = create_engine("postgresql://qxqcovcxobgrzr:136d1a4ee21d7d53fefe41723c82cadb3a41edd4203ef9b4759b8ecb1daf68a7@ec2-107-23-76-12.compute-1.amazonaws.com:5432/d7477vdhmjaq31", echo = False)
+
+    with engine.connect() as conn:
+        query = conn.execute(text(query_str))
+
+    df = pd.DataFrame(query.fetchall())
+    answer_text = df
+
+    responseBody = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {
+                    "simpleText": {
+                        "text": answer_text 
+                    }
+                }
+            ]
+        }
+    }
+    return responseBody
+
 
 if __name__ == "__main__":
     db_create()
