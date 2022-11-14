@@ -187,10 +187,11 @@ def querySQL2():
     location02 = json.loads(params_df['sys_location02'])
     location03 = json.loads(params_df['sys_location03'])
     
-
+    print('------------')
     print(location01, type(location01))
     print(location02, type(location02))
     print(location03, type(location03))
+    print('------------')
     query_str = f'''
         SELECT DISTINCT name FROM apt2 where city = {location01} and gu = {location02} and dong = {location03}
     '''
