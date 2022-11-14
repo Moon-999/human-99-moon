@@ -29,6 +29,20 @@ def db_create():
     print(data)
     data.to_sql(name='iris', con=engine, schema = 'public', if_exists='replace', index=False)
 
+    engine.execute("""
+        CREATE TABLE IF NOT EXISTS apt2(
+            city varchar2(50) NOT NULL,
+            gu varchar2(50) NOT NULL,
+            dong varchar2(50) NOT NULL,
+            name varchar2(50) NOT NULL,
+            type number,
+            price number not null
+        );"""
+    )
+    data = pd.read_csv('data/apt2.csv')
+    print(data)
+    data.to_sql(name='apt2', con=engine, schema = 'public', if_exists='replace', index=False)
+
 ## 메인 로직!! 
 def cals(opt_operator, number01, number02):
     if opt_operator == "addition":
