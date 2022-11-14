@@ -35,8 +35,8 @@ def db_create():
             gu varchar(50) NOT NULL,
             dong varchar(50) NOT NULL,
             name varchar(50) NOT NULL,
-            type number,
-            price number not null
+            type int,
+            price int not null
         );"""
     )
     data = pd.read_csv('data/apt2.csv')
