@@ -31,10 +31,10 @@ def db_create():
 
     engine.execute("""
         CREATE TABLE IF NOT EXISTS apt2(
-            city varchar2(50) NOT NULL,
-            gu varchar2(50) NOT NULL,
-            dong varchar2(50) NOT NULL,
-            name varchar2(50) NOT NULL,
+            city varchar(50) NOT NULL,
+            gu varchar(50) NOT NULL,
+            dong varchar(50) NOT NULL,
+            name varchar(50) NOT NULL,
             type number,
             price number not null
         );"""
