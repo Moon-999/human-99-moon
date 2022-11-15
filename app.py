@@ -205,6 +205,9 @@ def querySQL2():
         query = conn.execute(text(query_str))
 
     df = pd.DataFrame(query.fetchall())
+    print('-----------')
+    print(df)
+    print('----------')
     answer_text = df.to_dict
 
     responseBody = {
