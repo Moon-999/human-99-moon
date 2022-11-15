@@ -275,10 +275,11 @@ def querySQL4():
     body = request.get_json()
     print(body, type(body))
     
+    location04 = body['action']['params']['sys_location04']
     sys_number = body['action']['params']['sys_number']
 
     query_str = f'''
-        SELECT DISTINCT "PRICE" FROM apt2 where "TYPE" = '{sys_number}'
+        SELECT DISTINCT "PRICE" FROM apt2 where "NAME" = '{location04}' and "TYPE" = '{sys_number}'
     '''
     print('---------------')
     print(query_str)
@@ -293,8 +294,8 @@ def querySQL4():
     print('-----------')
     print(df)
     print('----------')
-    results = df['TYPE'].tolist()
-    answer_text = '/'.join(str(s) for s in results)
+    results = df['PRICE'].tolist()
+    #answer_text = '/'.join(str(s) for s in results)
 
     responseBody = {
         "version": "2.0",
@@ -302,7 +303,7 @@ def querySQL4():
             "outputs": [
                 {
                     "simpleText": {
-                        "text": answer_text
+                        "text": query
                     }
                 }
             ]
