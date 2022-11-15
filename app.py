@@ -252,7 +252,7 @@ def querySQL3():
     print(df)
     print('----------')
     results = df['TYPE'].tolist()
-    answer_text = '/ '.join(results)  
+    answer_text = '/'.join(str(s) for s in results)
 
     responseBody = {
         "version": "2.0",
