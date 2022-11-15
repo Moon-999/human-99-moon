@@ -208,8 +208,10 @@ def querySQL2():
     print('-----------')
     print(df)
     print('----------')
-    
-    
+    dic = df.to_dict('list')
+    print('-----')
+    print(dic)
+    print('-----')    
 
     responseBody = {
         "version": "2.0",
