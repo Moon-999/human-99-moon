@@ -276,10 +276,12 @@ def querySQL4():
     print(body, type(body))
     
     location04 = body['action']['params']['sys_location04']
-    sys_number = body['action']['params']['sys_number']['amount']
+    params_df = body['action']['params']
+    print(params_df, print(type(params_df)))
+    sys_number = str(json.loads(params_df['sys_number'])['amount'])
 
     query_str = f'''
-        SELECT "PRICE" FROM apt2 where "NAME" = '{location04}' AND "TYPE" = {str(sys_number)}
+        SELECT "PRICE" FROM apt2 where "NAME" = '{location04}' AND "TYPE" = {sys_number}
     '''
     print('---------------')
     print(query_str)
