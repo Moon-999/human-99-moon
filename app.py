@@ -209,6 +209,9 @@ def querySQL2():
     print(df)
     print('----------')
     answer_text = df.to_dict
+    print('---------')
+    print(answer_text)
+    print('--------')
 
     responseBody = {
         "version": "2.0",
