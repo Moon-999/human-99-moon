@@ -183,8 +183,9 @@ def querySQL2():
     
     body = request.get_json()
     params_df = body['action']['params']
-    print(params_df)
+    print(params_df, print(type(params_df)))
     location01 = json.loads(params_df['sys_location01'])
+    print(location01, type(location01))
     location02 = json.loads(params_df['sys_location02'])
     location03 = json.loads(params_df['sys_location03'])
     
