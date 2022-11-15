@@ -210,8 +210,9 @@ def querySQL2():
     print('----------')
     dic = df.to_dict('list')
     print('-----')
-    print(dic)
-    print('-----')    
+    print(dic.values())
+    print('-----')
+    dic_text = dic.values()    
 
     responseBody = {
         "version": "2.0",
@@ -219,7 +220,7 @@ def querySQL2():
             "outputs": [
                 {
                     "simpleText": {
-                        "text": df 
+                        "text": dic_text
                     }
                 }
             ]
