@@ -289,7 +289,9 @@ def querySQL4():
 
     with engine.connect() as conn:
         query = conn.execute(text(query_str))
-
+    print('-----------')
+    print(query)
+    print('-------------')
     df = pd.DataFrame(query.fetchall())
     print('-----------')
     print(df)
