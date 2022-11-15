@@ -276,7 +276,8 @@ def querySQL4():
     print(body, type(body))
     
     location04 = body['action']['params']['sys_location04']
-    sys_number = body['action']['params']['sys_number']['amount']
+    sys_number = float(body['action']['params']['sys_number']['amount'])
+    sys_number = int(sys_number)
     print(sys_number, type(sys_number))
     # params_df = body['action']['params']
     # print(params_df, print(type(params_df)))
