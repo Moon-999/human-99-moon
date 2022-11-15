@@ -209,7 +209,7 @@ def querySQL2():
     print(df)
     print('----------')
     dic = df.to_dict('list')
-    json_data = json.dumps(dic)   
+    json_data = json.dumps(dic, encoding='utf-8')   
 
     responseBody = {
         "version": "2.0",
