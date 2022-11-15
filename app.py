@@ -199,7 +199,7 @@ def querySQL2():
         query = conn.execute(text(query_str))
 
     df = pd.DataFrame(query.fetchall())
-    answer_text = df
+    answer_text = df.to_dict
 
     responseBody = {
         "version": "2.0",
