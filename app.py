@@ -147,6 +147,7 @@ def querySQL():
     
     body = request.get_json()
     params_df = body['action']['params']
+    print(params_df, print(type(params_df)))
     sepal_length_num = str(json.loads(params_df['sepal_length_num'])['amount'])
 
     print(sepal_length_num, type(sepal_length_num))
