@@ -279,7 +279,7 @@ def querySQL4():
     sys_number = body['action']['params']['sys_number']
 
     query_str = f'''
-        SELECT DISTINCT "PRICE" FROM apt2 where "NAME" = '{location04}' and "TYPE" = '{sys_number}'
+        SELECT DISTINCT "PRICE" FROM apt2 where "NAME" = '{location04}' AND "TYPE" = '{sys_number}'
     '''
     print('---------------')
     print(query_str)
