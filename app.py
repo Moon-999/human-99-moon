@@ -208,11 +208,7 @@ def querySQL2():
     print('-----------')
     print(df)
     print('----------')
-    answer_text = {}
-    answer_text = df.to_dict
-    print('---------')
-    print(answer_text ,type(answer_text))
-    print('--------')
+    
     
 
     responseBody = {
@@ -221,7 +217,7 @@ def querySQL2():
             "outputs": [
                 {
                     "simpleText": {
-                        "text": answer_text 
+                        "text": df 
                     }
                 }
             ]
