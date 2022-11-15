@@ -210,8 +210,9 @@ def querySQL2():
     print('----------')
     answer_text = df.to_dict
     print('---------')
-    print(answer_text)
+    print(answer_text ,type(answer_text))
     print('--------')
+    
 
     responseBody = {
         "version": "2.0",
