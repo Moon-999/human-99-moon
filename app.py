@@ -236,7 +236,7 @@ def querySQL3():
     location04 = body['action']['params']['sys_location04']
 
     query_str = f'''
-        SELECT DISTINCT "TYPE" FROM apt2 where "NAME" = '{location04}'
+        SELECT "TYPE" FROM apt2 where "NAME" = '{location04}'
     '''
     print('---------------')
     print(query_str)
@@ -267,6 +267,49 @@ def querySQL3():
         }
     }
     return responseBody
+
+## Query 조회4
+@app.route('/api/querySQL4', methods=['POST'])
+def querySQL4():
+    
+    body = request.get_json()
+    print(body, type(body))
+    
+    sys_number = body['action']['params']['sys_number']
+
+    query_str = f'''
+        SELECT DISTINCT "PRICE" FROM apt2 where "TYPE" = '{sys_number}'
+    '''
+    print('---------------')
+    print(query_str)
+    print('---------------')
+
+    engine = create_engine("postgresql://qxqcovcxobgrzr:136d1a4ee21d7d53fefe41723c82cadb3a41edd4203ef9b4759b8ecb1daf68a7@ec2-107-23-76-12.compute-1.amazonaws.com:5432/d7477vdhmjaq31", echo = False)
+
+    with engine.connect() as conn:
+        query = conn.execute(text(query_str))
+
+    df = pd.DataFrame(query.fetchall())
+    print('-----------')
+    print(df)
+    print('----------')
+    results = df['TYPE'].tolist()
+    answer_text = '/'.join(str(s) for s in results)
+
+    responseBody = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {
+                    "simpleText": {
+                        "text": answer_text
+                    }
+                }
+            ]
+        }
+    }
+    return responseBody
+
 
 if __name__ == "__main__":
     db_create()
