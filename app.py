@@ -276,7 +276,7 @@ def querySQL4():
     print(body, type(body))
     
     location04 = body['action']['params']['sys_location04']
-    sys_number = body['action']['params']['sys_number']
+    sys_number = body['action']['params']['sys_number']['amount']
 
     query_str = f'''
         SELECT "PRICE" FROM apt2 where "NAME" = '{location04}' AND "TYPE" = {sys_number}
