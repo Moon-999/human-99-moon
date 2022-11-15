@@ -295,7 +295,7 @@ def querySQL4():
     print(df)
     print('----------')
     results = df['PRICE'].tolist()
-    #answer_text = '/'.join(str(s) for s in results)
+    answer_text = '/'.join(str(s) for s in results)
 
     responseBody = {
         "version": "2.0",
@@ -303,7 +303,7 @@ def querySQL4():
             "outputs": [
                 {
                     "simpleText": {
-                        "text": query
+                        "text": answer_text
                     }
                 }
             ]
