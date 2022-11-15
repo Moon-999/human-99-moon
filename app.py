@@ -276,7 +276,7 @@ def querySQL4():
     print(body, type(body))
     
     location05 = body['action']['params']['sys_location05']
-    sys_number = body['action']['params']['sys_number']['amount']
+    sys_number = str(json.loads(body['action']['params']['sys_number'])['amount'])
     print('---------------')
     print(sys_number, type(sys_number))
     print('---------------')
