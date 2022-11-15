@@ -190,7 +190,7 @@ def querySQL2():
     location03 = body['action']['params']['sys_location03']
 
     query_str = f'''
-        SELECT DISTINCT "NAME" FROM apt2 where "CITY" = TRIM('{location01}') and "GU" = '{location02}' and "DONG" = TRIM('{location03}')
+        SELECT DISTINCT "NAME" FROM apt2 where "CITY" = '{location01}' and "GU" = '{location02}' and "DONG" = '{location03}'
     '''
 
     engine = create_engine("postgresql://qxqcovcxobgrzr:136d1a4ee21d7d53fefe41723c82cadb3a41edd4203ef9b4759b8ecb1daf68a7@ec2-107-23-76-12.compute-1.amazonaws.com:5432/d7477vdhmjaq31", echo = False)
