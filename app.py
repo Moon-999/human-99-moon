@@ -341,7 +341,7 @@ def querySQL5():
     body = request.get_json()
     print(body, type(body))
     
-    price = body['action']['params']['price']
+    price = int(body['action']['params']['price'])
     
     print('---------------')
     print(price, type(price))
