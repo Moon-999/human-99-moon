@@ -346,7 +346,7 @@ def querySQL5():
     # location03 = body['action']['params']['sys_location03']
     # location04 = body['action']['params']['sys_location04']
     # sys_number = str(json.loads(body['action']['params']['sys_number'])['amount'])
-    price = int(body['action']['detailParams']['origin'])
+    price = int(body['action']['detailParams']['price']['origin'])
     
     print('---------------')
     print(price, type(price))
