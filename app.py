@@ -236,7 +236,7 @@ def querySQL3():
     location01 = body['action']['params']['sys_location01']
     location02 = body['action']['params']['sys_location02']
     location03 = body['action']['params']['sys_location03']
-    location04 = body['action']['params']['sys_location04']
+    location04 = body['action']['detailParams']['sys_location04']['origin']
 
     query_str = f'''
         SELECT "TYPE" FROM apt2 where "CITY" = '{location01}' and "GU" = '{location02}' and "DONG" = '{location03}' and "NAME" = '{location04}'
