@@ -373,15 +373,23 @@ def querySQL5():
     # print('----------')
     # results = df['PRICE'].tolist()
     # answer_text = '/'.join(str(s) for s in results)
- 
+    
+    Error_message = "코드이상"
+    if price <= 600000000:
+        answer_text = "위에서 입력하신 기준으로 고객님은 안심전환대출 신청이 가능합니다. \n (유의사항) 주택의 시세는 변동될 수 있으며, 최종 대출 가능 여부는 실제 대출심사를 통해 확인할 수 있습니다."
+    elif price > 600000000:
+        answer_text = "주택가격이 신청일 기준 6억원을 초과할 경우 안심전환대출신청이 불가합니다."
+    else:
+        answer_text = Error_message
+
+
     responseBody = {
         "version": "2.0",
             "template": {
                 "outputs": [
                     {
                         "simpleText": {
-                            "text": "위에서 입력하신 기준으로 고객님은 안심전환대출 신청이 가능합니다. \n (유의사항) 주택의 시세는 변동될 수 있으며, 최종 대출 가능 여부는 실제 대출심사를 통해 확인할 수 있습니다."
-                            if price <= 600000000 else "주택가격이 신청일 기준 6억원을 초과할 경우 안심전환대출신청이 불가합니다."
+                            "text": answer_text
                          } 
                         }
                     ]
