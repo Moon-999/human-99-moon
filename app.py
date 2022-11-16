@@ -350,7 +350,7 @@ def querySQL5():
     # print(params_df, print(type(params_df)))
     # sys_number = str(json.loads(params_df['sys_number'])['amount'])
 
-    if ({price} <= 600000000):
+    if price <= 600000000:
         responseBody = {
         "version": "2.0",
         "template": {
