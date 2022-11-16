@@ -341,38 +341,11 @@ def querySQL5():
     body = request.get_json()
     print(body, type(body))
     
-    # location01 = body['action']['params']['sys_location01']
-    # location02 = body['action']['params']['sys_location02']
-    # location03 = body['action']['params']['sys_location03']
-    # location04 = body['action']['params']['sys_location04']
-    # sys_number = str(json.loads(body['action']['params']['sys_number'])['amount'])
     price = int(body['action']['detailParams']['price']['origin'])
     
     print('---------------')
     print(price, type(price))
     print('---------------')
-    # params_df = body['action']['params']
-    # print(params_df, print(type(params_df)))
-    # sys_number = str(json.loads(params_df['sys_number'])['amount'])
-    # query_str = f'''
-    #     SELECT "PRICE" FROM apt2 where "CITY" = '{location01}' and "GU" = '{location02}' and "DONG" = '{location03}' and "NAME" = '{location04}' AND "TYPE" = {sys_number}
-    # '''
-    
-
-
-    # engine = create_engine("postgresql://qxqcovcxobgrzr:136d1a4ee21d7d53fefe41723c82cadb3a41edd4203ef9b4759b8ecb1daf68a7@ec2-107-23-76-12.compute-1.amazonaws.com:5432/d7477vdhmjaq31", echo = False)
-
-    # with engine.connect() as conn:
-    #     query = conn.execute(text(query_str))
-    # print('-----------')
-    # print(query)
-    # print('-------------')
-    # df = pd.DataFrame(query.fetchall())
-    # print('-----------')
-    # print(df)
-    # print('----------')
-    # results = df['PRICE'].tolist()
-    # answer_text = '/'.join(str(s) for s in results)
     
     Error_message = "코드이상"
     if price <= 600000000:
