@@ -233,10 +233,13 @@ def querySQL3():
     body = request.get_json()
     print(body, type(body))
     
+    location01 = body['action']['params']['sys_location01']
+    location02 = body['action']['params']['sys_location02']
+    location03 = body['action']['params']['sys_location03']
     location04 = body['action']['params']['sys_location04']
 
     query_str = f'''
-        SELECT "TYPE" FROM apt2 where "NAME" = '{location04}'
+        SELECT "TYPE" FROM apt2 where "CITY" = '{location01}' and "GU" = '{location02}' and "DONG" = '{location03}' and "NAME" = '{location04}'
     '''
     print('---------------')
     print(query_str)
