@@ -217,7 +217,7 @@ def querySQL2():
             "outputs": [
                 {
                     "simpleText": {
-                        "text": location01 + "/" + location02 + "/" + location03 + "를 선택하셨습니다. \t 해당 지역의 아파트는 [" + answer_text + "] 입니다. \t 소유하신 아파트명을 입력해 주세요."
+                        "text": location01 + "/" + location02 + "/" + location03 + "(을)를 선택하셨습니다. \n 해당 지역의 아파트는 [" + answer_text + "] 입니다. \n 소유하신 아파트명을 입력해 주세요."
                     }
                 }
             ]
