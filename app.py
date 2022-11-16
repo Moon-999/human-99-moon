@@ -334,6 +334,39 @@ def querySQL4():
     return responseBody
 
 
+## Query 조회5
+@app.route('/api/querySQL5', methods=['POST'])
+def querySQL5():
+    
+    body = request.get_json()
+    print(body, type(body))
+    
+    price = str(json.loads(body['action']['params']['price'])['amount'])
+    
+    print('---------------')
+    print(price, type(price))
+    print('---------------')
+    # params_df = body['action']['params']
+    # print(params_df, print(type(params_df)))
+    # sys_number = str(json.loads(params_df['sys_number'])['amount'])
+
+    if ({price} <= 600000000):
+        responseBody = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {
+                    "simpleText": {
+                        "text": "위에서 입력하신 기준으로 고객님은 안심전환대출 신청이 가능합니다. \n (유의사항) 주택의 시세는 변동될 수 있으며, 최종 대출 가능 여부는 실제 대출심사를 통해 확인할 수 있습니다."
+                        }
+                    }
+                ]
+            }
+        }
+    return responseBody
+    
+   
+
 if __name__ == "__main__":
     db_create()
     app.run()
