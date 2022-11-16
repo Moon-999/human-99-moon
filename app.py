@@ -314,24 +314,14 @@ def querySQL4():
     responseBody = {
         "version": "2.0",
         "template": {
-            "contents":[
-                        {
-                            "type":"card.text",
-                            "cards":[
-                                        {
-                                            "description": "해당 아파트 타입의 시세 조회 결과입니다.",
-                                            "buttons":[
-                                                        {
-                                                            "type":"text",
-                                                            "label": answer_text,
-                                                            "message": answer_text
-                                                            
-                                                        }
-                                                     ]
-                                         }
-                                     ]
-                         }
-                  ]
+            "outputs": [
+                {
+                    "simpleText": {
+                        "text": "해당 아파트 타입의 시세 조회 결과 : . \n " + answer_text + "원 입니다."
+                    }
+                }
+            ]
+            
         }
     }
     return responseBody
