@@ -341,16 +341,16 @@ def querySQL5():
     body = request.get_json()
     print(body, type(body))
     
-    price = int(body['action']['params']['price'])
+    price1 = int(body['action']['params']['price1'])
     
     print('---------------')
-    print(price, type(price))
+    print(price1, type(price1))
     print('---------------')
     # params_df = body['action']['params']
     # print(params_df, print(type(params_df)))
     # sys_number = str(json.loads(params_df['sys_number'])['amount'])
 
-    if price <= 600000000:
+    if price1 <= 600000000:
         responseBody = {
             "version": "2.0",
                 "template": {
@@ -364,7 +364,7 @@ def querySQL5():
                         ]
                     }
         }
-    if price > 600000000:
+    if price1 > 600000000:
        responseBody = {
             "version": "2.0",
                 "template": {
