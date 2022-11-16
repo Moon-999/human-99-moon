@@ -364,7 +364,7 @@ def querySQL5():
                 }
      }
         return responseBody
-    else:
+    elif price > 600000000:
        responseBody = {
         "version": "2.0",
             "template": {
