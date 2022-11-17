@@ -355,22 +355,34 @@ def querySQL5():
     else:
         answer_text = Error_message
 
-
     responseBody = {
-        "version": "2.0",
-            "template": {
-                "outputs": [
-                    {
-                        "simpleText": {
-                            "text": answer_text
-                         } 
-                        }
-                    ]
-                }
-     }
-     
-    return responseBody 
-
+        "contents":[
+                        {
+                            "type":"card.text",
+                            "cards":[
+                                        {
+                                            "description": answer_text,
+                                            "buttons":[
+                                                        {
+                                                            "type":"text",
+                                                            "label": "신청안내",
+                                                            "message": "신청안내"
+                                                            
+                                                        },
+                                                        {
+                                                            "type":"text",
+                                                            "label": "홈버튼",
+                                                            "message": "홈버튼"
+                                                            
+                                                        }
+                                                     ]
+                                         }
+                             ]
+                 }
+          ]
+    }
+    return responseBody
+    
    
 
 if __name__ == "__main__":
