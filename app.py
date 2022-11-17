@@ -355,6 +355,19 @@ def querySQL5():
     else:
         answer_text = Error_message
 
+    # responseBody = {
+    #     "version": "2.0",
+    #     "template": {
+    #         "outputs": [
+    #             {
+    #                 "simpleText": {
+    #                     "text": answer_text 
+    #                 }
+    #             }
+    #         ]
+    #     }
+    # }
+    # return responseBody
     responseBody = {
         "contents":[
                         {
