@@ -322,7 +322,7 @@ def querySQL4():
                                                         {
                                                             "type":"text",
                                                             "label": answer_text,
-                                                            "message": "-" + answer_text + "원-"
+                                                            "message": "-" + answer_text + "-"
                                                             
                                                         }
                                                      ]
