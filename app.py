@@ -263,7 +263,7 @@ def querySQL3():
             "outputs": [
                 {
                     "simpleText": {
-                        "text": location04 + "(을)를 선택하셨습니다. \n 해당 아파트의 타입은 \n [" + answer_text + "] \t 입니다. \n 해당하시는 아파트의 타입을 입력해주세요."
+                        "text": location04 + "(을)를 선택하셨습니다. \n 해당 아파트의 평수는 \n [" + answer_text + "](㎡) \t 입니다. \n 해당하시는 아파트의 타입을 입력해주세요."
                     }
                 }
             ]
