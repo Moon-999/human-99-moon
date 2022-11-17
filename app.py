@@ -181,7 +181,7 @@ def querySQL():
     }
     return responseBody
 
-## Query 조회2
+## Query 주택시세조회 - '주소1'에 해당하는 시/구/동 변수를 통해 아파트명 조회 
 @app.route('/api/querySQL2', methods=['POST'])
 def querySQL2():
     
@@ -226,7 +226,7 @@ def querySQL2():
     return responseBody
 
 
-## Query 조회3
+## Query 주택시세조회 - '주소2'에 해당하는 아파트명 + 컨텍스트로 앞서 조회했던 시/구/동 파라미터 연동 => 해당 아파트 타입 조회
 @app.route('/api/querySQL3', methods=['POST'])
 def querySQL3():
     
@@ -271,7 +271,7 @@ def querySQL3():
     }
     return responseBody
 
-## Query 조회4
+## Query 주택시세조회 - 컨텍스트로 앞선 파라미터 모두 연동하여 해당 타입의 시세 조회
 @app.route('/api/querySQL4', methods=['POST'])
 def querySQL4():
     
