@@ -66,7 +66,7 @@ def db_create():
 
     engine.connect()
     engine.execute("""
-        CREATE TABLE IF NOT EXISTS iris(
+        CREATE TABLE IF NOT EXISTS apt_final(
             Unnamed FLOAT ,
             거래금액 VARCHAR(30) NOT NULL,
             거래유형 VARCHAR(30) NOT NULL,
