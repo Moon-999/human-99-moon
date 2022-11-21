@@ -98,6 +98,7 @@ def db_create():
     print(df)
   # 맨 아래 / 마지막 행 남기고 전부 제거 :: last
     df.drop_duplicates(['건축년도', '년', '법정동', '아파트', '전용면적', '지번', '지역코드'], keep = 'last')
+    df.drop(['Unnamed: 0'], axis=1, inplace=True)
     df.to_sql(name='apt', con=engine, schema = 'public', if_exists='replace', index=False)
 
     
