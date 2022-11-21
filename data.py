@@ -65,25 +65,25 @@ def db_create():
     engine = create_engine("postgresql://qxqcovcxobgrzr:136d1a4ee21d7d53fefe41723c82cadb3a41edd4203ef9b4759b8ecb1daf68a7@ec2-107-23-76-12.compute-1.amazonaws.com:5432/d7477vdhmjaq31", echo = False)
 
     engine.connect()
-    engine.execute("""
-        CREATE TABLE IF NOT EXISTS apt_final(
-            거래금액 VARCHAR(30) NOT NULL,
-            거래유형 VARCHAR(30) NOT NULL,
-            건축년도 INT NOT NULL,
-            년 INT NOT NULL,
-            법정동 VARCHAR(50) NOT NULL,
-            아파트 VARCHAR(50) NOT NULL,
-            월 INT NOT NULL,
-            일 INT NOT NULL,
-            전용면적 FLOAT NOT NULL,
-            중개사소재지 VARCHAR(50) NOT NULL,
-            지번 VARCHAR(30) NOT NULL, 
-            지역코드 INT NOT NULL,
-            층 INT NOT NULL,
-            해체사유발생일 VARCHAR(20),
-            해체여부 VARCHAR(20)   
-        );"""
-    )
+    # engine.execute("""
+    #     CREATE TABLE IF NOT EXISTS apt_final(
+    #         거래금액 VARCHAR(30) NOT NULL,
+    #         거래유형 VARCHAR(30) NOT NULL,
+    #         건축년도 INT NOT NULL,
+    #         년 INT NOT NULL,
+    #         법정동 VARCHAR(50) NOT NULL,
+    #         아파트 VARCHAR(50) NOT NULL,
+    #         월 INT NOT NULL,
+    #         일 INT NOT NULL,
+    #         전용면적 FLOAT NOT NULL,
+    #         중개사소재지 VARCHAR(50) NOT NULL,
+    #         지번 VARCHAR(30) NOT NULL, 
+    #         지역코드 INT NOT NULL,
+    #         층 INT NOT NULL,
+    #         해체사유발생일 VARCHAR(20),
+    #         해체여부 VARCHAR(20)   
+    #     );"""
+    # )
     df = pd.read_csv('data/aptSample_final.csv')
     print(df)
     LAWD = ['31710', '36110', '41111', '41113', '41115', '41117', '41131', '41133', '41135', '41150', '41171', '41190', '41210', '41220', '41250', '41270', '41281', '41285', '41287', '41290', '41310', '41360', 
@@ -97,8 +97,8 @@ def db_create():
         df = pd.concat([df, newdf])
     print(df)
   # 맨 아래 / 마지막 행 남기고 전부 제거 :: last
-    df.drop_duplicates(['건축년도', '년', '법정동', '아파트', '전용면적', '지번', '지역코드'], keep = 'last')
+    df = df.drop_duplicates(['건축년도', '년', '법정동', '아파트', '전용면적', '지번', '지역코드'], keep = 'last')
     df.drop(['Unnamed: 0'], axis=1, inplace=True)
-    df.to_sql(name='apt', con=engine, schema = 'public', if_exists='replace', index=False)
+    df.to_sql(name='apt_final', con=engine, schema = 'public', if_exists='replace', index=False)
 
     
