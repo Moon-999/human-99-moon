@@ -354,20 +354,7 @@ def querySQL5():
         answer_text = "주택가격이 신청일 기준 6억원을 초과할 경우 안심전환대출신청이 불가합니다."
     else:
         answer_text = Error_message
-
-    # responseBody = {
-    #     "version": "2.0",
-    #     "template": {
-    #         "outputs": [
-    #             {
-    #                 "simpleText": {
-    #                     "text": answer_text 
-    #                 }
-    #             }
-    #         ]
-    #     }
-    # }
-    # return responseBody
+        
     responseBody = {
         "contents":[
                         {
