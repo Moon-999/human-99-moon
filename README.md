@@ -2,7 +2,7 @@
 - 22.11.17 ~ 22.11.22
 - 개발환경
     - 코딩환경 : vsCode / jupyterlab 
-    - 웹환경 : Github / Heroku / Flask / kakao open builder
+    - 웹환경 : Github / Heroku / Flask / SQLalchemy / kakao open builder 
     - 언어 : python
 - 프로젝트 ppt
     - 
