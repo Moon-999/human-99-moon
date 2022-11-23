@@ -7,7 +7,10 @@
 - 프로젝트 ppt
     - 
 - 영상
-    - 
+    - 신청자격 - https://youtu.be/ibZtP0mG4c0
+    - 부동산뉴스 - https://youtu.be/awkQyPooWlA
+
+
 - 프로젝트 주요 기능
     - 부동산 뉴스(주요뉴스 / 지역별 뉴스 검색)
         - 웹크롤링을 통한 부동산 뉴스기사 수집
