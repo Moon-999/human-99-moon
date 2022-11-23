@@ -5,7 +5,7 @@
     - 웹환경 : Github / Heroku / Flask / SQLalchemy / kakao open builder 
     - 언어 : python
 - 프로젝트 ppt
-    - 
+    - [프로젝트 ppt](%EB%B6%80%EB%8F%99%EC%82%B0_%EC%B1%97%EB%B4%87_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85.pdf)
 - 영상
     - 신청자격 - https://youtu.be/ibZtP0mG4c0
     - 부동산뉴스 - https://youtu.be/awkQyPooWlA
